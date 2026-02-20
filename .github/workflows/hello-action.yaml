@@ -29,3 +29,18 @@ jobs:
           echo "username ${{ github.actor }}"
           echo "OS ${{ runner.os }}"
           echo "Architecture ${{ runner.arch }}"
+
+  checkout-example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: List files
+        run: ls
+
+      - name: list hidden files
+        run: ls -a
+
+      - name: Display file on the repository
+        run: ls -la
