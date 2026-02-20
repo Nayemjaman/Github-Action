@@ -1,6 +1,7 @@
 name: hello action
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
