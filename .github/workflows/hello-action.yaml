@@ -12,15 +12,13 @@ jobs:
     steps:
       - name: Show current date
         run: date
+
       - name: Run a one line action
         run: echo "Hello world!"
+
       - name: Show system information
         run: |
-        echo "The job was automatically triggered by a ${{ github.event_name }} event."
-        echo "usename" ${{ github.actor }}
-        echo "The job is now running on a ${{ runner.os }} server hosted by GitHub."
-        echo "The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-
-
-
- 
+          echo "The job was automatically triggered by a ${{ github.event_name }} event."
+          echo "username ${{ github.actor }}"
+          echo "The job is now running on a ${{ runner.os }} server hosted by GitHub."
+          echo "The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
