@@ -10,6 +10,14 @@ jobs:
   hello-world:
     runs-on: ubuntu-latest
     steps:
+      - name: Install dependencies
+        run: | 
+          sudo apt-get update
+          sudo apt-get install -y curl jq
+          echo "Dependencies installed"
+          echo "curl version: $(curl --version)"
+          echo "jq version: $(jq --version)"
+
       - name: Show current date
         run: date
 
@@ -18,7 +26,6 @@ jobs:
 
       - name: Show system information
         run: |
-          echo "The job was automatically triggered by a ${{ github.event_name }} event."
           echo "username ${{ github.actor }}"
-          echo "The job is now running on a ${{ runner.os }} server hosted by GitHub."
-          echo "The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+          echo "OS ${{ runner.os }}"
+          echo "Architecture ${{ runner.arch }}"
